@@ -28,7 +28,7 @@
 			</button>
 			<div class="setup-card cs-hide" id="registration">
 				<div class="setup-card__form">
-					<div class="setup-card__brand">CruxPay</div>
+					<img src="../images/brand-logo--dark.png" alt="CruxPay" class="brand-logo">
 					<div class="setup-card__headline">Create your CruxPay Account</div>
 					<div class="setup-card__body">Continue to CruxPay</div>
 
@@ -40,11 +40,11 @@
 								<div class="mdc-notched-outline">
 									<div class="mdc-notched-outline__leading"></div>
 									<div class="mdc-notched-outline__notch">
-										<label for="text-field-hero-input" class="mdc-floating-label">CruxPay ID</label>
+										<label for="text-field-hero-input" class="mdc-floating-label">CRUXPay ID</label>
 									</div>
 									<div class="mdc-notched-outline__trailing">
 										<div class="id-status">
-											.curxpay.id
+
 										</div>
 									</div>
 								</div>
@@ -53,78 +53,37 @@
 								<p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
 									id="cruxpay-id__helper-text">Enter a unique alphanumeric user id</p>
 							</div>
-						</div>
-
-						<div class="text-field-container">
-							<div class="mdc-text-field mdc-text-field--outlined cruxpay-password__container">
-								<input class="mdc-text-field__input" id="cruxpayPassword" type="password">
-								<div class="mdc-notched-outline">
-									<div class="mdc-notched-outline__leading"></div>
-									<div class="mdc-notched-outline__notch">
-										<label for="text-field-hero-input" class="mdc-floating-label">Password</label>
-									</div>
-									<div class="mdc-notched-outline__trailing"></div>
+							<div class="validation-rules validation-rules--cruxid">
+								<div class="rule">
+									<i class="material-icons">
+										error_outline
+									</i>
+									<span>Minimum Id length is 4</span>
 								</div>
-							</div>
-							<div class="mdc-text-field-helper-line">
-								<p class="mdc-text-field-helper-text mdc-text-field-helper-text--persistent mdc-text-field-helper-text--validation-msg"
-									id="cruxpay-password__helper-text">Use 8 or more characters with a mix of letters,
-									numbers & symbols</p>
-							</div>
-							<div class="validation-rules">
-								<div class="rule rule-isInvalid" id="validation-charLen">
-									<i class="material-icons icon-invalid">
-										clear
+								<div class="rule">
+									<i class="material-icons">
+										error_outline
 									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Must be 8 or more characters</span>
+									<span>Maximum Id length is 20</span>
 								</div>
-								<div class="rule rule-isInvalid" id="validation-sameAsId">
-									<i class="material-icons icon-invalid">
-										clear
+								<div class="rule">
+									<i class="material-icons">
+										error_outline
 									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Should not be similar to CruxPay Id</span>
+									<span>Only <strong>_</strong> and <strong>-</strong> special characters are
+										allowed</span>
 								</div>
-								<div class="rule rule-isInvalid" id="validation-digit">
-									<i class="material-icons icon-invalid">
-										clear
+								<div class="rule">
+									<i class="material-icons">
+										error_outline
 									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Must have atleast one number</span>
+									<span>CRUX Id should start with an alphabet or number</span>
 								</div>
-								<div class="rule rule-isInvalid" id="validation-lowercase">
-									<i class="material-icons icon-invalid">
-										clear
+								<div class="rule">
+									<i class="material-icons">
+										error_outline
 									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Must have atleast one lowercase letter</span>
-								</div>
-								<div class="rule rule-isInvalid" id="validation-uppercase">
-									<i class="material-icons icon-invalid">
-										clear
-									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Must have atleast one uppercase letter</span>
-								</div>
-								<div class="rule rule-isInvalid" id="validation-specialCharater">
-									<i class="material-icons icon-invalid">
-										clear
-									</i>
-									<i class="material-icons icon-valid">
-										done
-									</i>
-									<span>Must have atleast one special characters</span>
+									<span>CRUX Id cannot start with special characters</span>
 								</div>
 							</div>
 						</div>
@@ -225,7 +184,7 @@
 		/**** FIXME ****/
 		let allCurrencies = [{ assetId: "4e4d9982-3469-421b-ab60-2c0c2f05386a", symbol: "ETH", name: "Ethereum", assetType: null, decimals: 8, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }, { assetId: "b38a1576-a704-479b-96fa-b9a83bda7ed5", symbol: "ETC", name: "Ethereum Classic", assetType: null, decimals: 8, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }, { assetId: "abe0030a-d8e3-4518-879f-cd9939b7d8ab", symbol: "XRP", name: "Ripple", assetType: null, decimals: 6, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }, { assetId: "a6d02462-e1b0-4135-bb64-49e567217a5f", symbol: "CVC", name: "Civic", assetType: "ERC20", decimals: 8, assetIdentifierName: "Contract Address", assetIdentifierValue: "0x41e5560054824ea6b0732e656e3ad64e20e94e45", parentAssetId: "4e4d9982-3469-421b-ab60-2c0c2f05386a" }, { assetId: "0a2f3bb6-5190-4c02-85a9-5eecea9ed912", symbol: "DOGE", name: "Dogecoin", assetType: null, decimals: 8, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }, { assetId: "c72972bd-7e85-40b4-83e5-9634f827214e", symbol: "ADA", name: "Cardano", assetType: null, decimals: 5, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }, { assetId: "aae85fa5-7d6a-427c-8088-37df459d55b8", symbol: "NEO", name: "NEO", assetType: "NEOGoverningToken", decimals: 18, assetIdentifierName: "Asset ID", assetIdentifierValue: "c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b", parentAssetId: null }, { assetId: "af9c0656-580e-4700-bec8-13d24d2ead87", symbol: "ONT", name: "Ontology", assetType: null, decimals: 1, assetIdentifierName: null, assetIdentifierValue: null, parentAssetId: null }];
 		window.walletInfo = {
-			cruxIDSubdomain: 'amitasaurus', // This field is used to determine state - ID Registration or Public Currencies Configuration
+			cruxIDSubdomain: '', // This field is used to determine state - ID Registration or Public Currencies Configuration
 			suggestedCruxIDSubdomain: 'amitasaurus', // If cruxIDSubdomain is empty('' or null) then show prefilled suggestedCruxIDSubdomain in input.
 			walletClientName: 'pillar',
 			availableCurrencies: { btc: "3LoJFcGiBgCzy235poxmq8uZGFGSK3ZbJN", eth: "0x501906Ce564be7bA80Eb55A29EE31ECfaE41b6f2", xrp: "rhVWrjB9EGDeK4zuJ1x2KXSjjSpsDQSaU6", neo: "AdpCh7w8cLdWWztRmqj1MbUtGgBfkn3Tx9", ada: "DdzFFzCqrhsjouCxmJaUN2Y5GoHuei5cA41jCHmxyKUfWD2jKmjujKnNKJb5pUkjHCiujxZPcgyMK1Mhrq2GBy1RGnBA91Cu5VdnFL9M" },
