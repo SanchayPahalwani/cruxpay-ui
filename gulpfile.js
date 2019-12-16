@@ -11,6 +11,7 @@ const inject = require('gulp-inject-string');
 const { series, parallel, watch } = require("gulp");
 
 const isDev = process.env.NODE_ENV === 'dev';
+const packageVersion = process.env.npm_package_version
 const openpaySdk = isDev ? 'http://127.0.0.1:8777/dist/openpay-dom.js' : 'https://s3-ap-southeast-1.amazonaws.com/files.coinswitch.co/openpay/sdk/exodus-gamma-v0.01/openpay-dom.js'
 
 function html(cb) {
@@ -18,7 +19,7 @@ function html(cb) {
 		.src("src/index.html")
 		// .pipe(inject.before('<!-- %PUBLIC:BUILD% -->', '<script src="'+ openpaySdk +'"></script>\n'))
 		.pipe(inject.before('<!-- %PUBLIC:BUILD% -->', '<script>window.isDev=' + isDev + '</script>\n'))
-		.pipe(gulp.dest("build/"));
+		.pipe(gulp.dest("build/" + packageVersion));
 	cb();
 }
 
@@ -35,7 +36,7 @@ function css(cb) {
 			})
 		)
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("build/css/"));
+		.pipe(gulp.dest("build/" + packageVersion + "/css/"));
 	cb();
 }
 
@@ -53,14 +54,16 @@ function js(cb) {
 				extname: ".min.js"
 			})
 		)
-		.pipe(gulp.dest("build/js/"));
+		// .pipe(gulp.dest("build/js/"));
+		.pipe(gulp.dest("build/" + packageVersion + "/js/"));
 	cb();
 }
 
 function images(cb) {
 	gulp
 		.src("images/**/*.*")
-		.pipe(gulp.dest("build/images"));
+		// .pipe(gulp.dest("build/images"));
+		.pipe(gulp.dest("build/" + packageVersion + "/images"));
 	cb();
 }
 
