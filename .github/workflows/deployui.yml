@@ -10,12 +10,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v1
 
-    - name: Build
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: 12
-      run: npm ci
-      run: npm run build:prod
+    - run: npm ci
+    - run: npm run build:prod
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
