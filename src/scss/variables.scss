@@ -1,0 +1,28 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+$brand: #736df8;
+$dark: #333648;
+$success: #2ed573;
+$error: #eb4d4b;
+
+@keyframes donut-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.donut {
+    display: inline-block;
+    border: 4px solid rgba(0, 0, 0, 0.15);
+    border-left-color: rgba(0, 0, 0, 0.75);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: donut-spin 1.2s linear infinite;
+}

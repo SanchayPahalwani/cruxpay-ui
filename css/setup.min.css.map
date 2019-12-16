@@ -1,0 +1,1 @@
+{"version":3,"sources":["setup.css"],"names":[],"mappings":"AACA,I,CADA,I,CAEE,W,CACA,U,CACA,mB,CAAA,mB,CAAA,Y,CACA,uB,CAAA,oB,CAAA,sB,CACA,wB,CAAA,qB,CAAA,kB,CACA,a","file":"setup.min.css","sourcesContent":["html,\nbody {\n  height: 100%;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #333648; }\n"]}
